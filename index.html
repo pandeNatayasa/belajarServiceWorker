@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>nata|mymws</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" >
+	<link rel="shortcut icon" href="images/profile.jpg" type="image/x-icon">
+	<style type="text/css">
+		body{
+			font-family: 'Roboto', sans-serif;
+			margin: 0;
+			padding: 0;
+
+		}
+		h4 {
+      text-align: center;
+    }
+
+    h3 {
+    	margin-top: 20px;
+      text-align: center;
+      font-size: 30px;
+    }
+		.container {
+			display: grid;
+			width: 100%;
+			margin: auto;
+			grid-template-areas:
+				'header header header'
+				'sidebar konten konten'
+				'footer footer footer';
+			
+		}
+
+		.header {
+			background-color: #212121;
+			grid-area: header;
+			color: #f5f5f5;
+			height: 20px;
+			padding:5px;
+		}
+		.sidebar {
+			grid-area:sidebar;
+			background-color: #313131;
+		}
+		.profile {
+			width: 400px;
+			text-align: center;
+		}
+		.profile a{
+			border-radius: 10px;
+			padding: 10px;
+			text-decoration: none;
+			color: white;
+			background-color: black;
+		}
+	
+		.konten {
+			grid-area:konten;
+			background-color: #e0e0e0;
+			height: 90vh;
+			overflow: auto;
+		}
+		.footer {
+			grid-area:footer;
+			background-color: #212121;
+			color: #f5f5f5;
+			height: 20px;
+			text-align: center;
+		}
+		.list {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: stretch;
+			flex-direction: row;
+			width: 90%;
+			margin: auto;
+		}
+		.item {
+			height: 200px;
+			width: 200px;
+			text-align: center;
+			position: relative;
+			flex-grow: 1;
+			margin: 10px 5px 10px 5px;
+			box-shadow: 3px 0px 2px rgba(0,0,0,0.3);
+		}
+		#imgprofile{
+			width: 200px;
+			border-radius: 50%;
+			height: 200px;
+			display: block;
+			margin: auto;
+			padding-top: 20px;
+		}
+		.item a{
+			text-decoration: none;
+		}
+		.item span:hover{
+			color: blue;
+		}
+		.item span{
+			position: absolute;
+			color: black;
+			top: 50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+		}
+		@media only screen and (max-width: 800px){
+			.list {
+				width: 90%;
+			}
+			.container {
+				width: 100%;
+				grid-template-areas:
+					'header header header'
+					'sidebar sidebar sidebar'
+					'konten konten konten'
+					'footer footer footer';
+			}
+			.konten {
+				height: 100%;
+				grid-area:konten;
+			}
+			.profile {
+				width: 200px;
+			}
+		}
+
+		@media only screen and (min-height: 1365px){
+			.item {
+				height: 50px; 
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">Selamat Datang</div>
+		<div class="sidebar">
+			<img id="imgprofile" src="images/profile.jpg">
+			<h3>Nata</h3>
+			<h4>Hai</h4>
+			<h4 style="text-align: center;">Everyone</h4>
+			<div class="profile">
+			</div>
+		</div>
+		<div class="konten">
+			<div class="list">
+				<div class="item" style="background-color: #eeeeee;">
+					<a href="project1/kalkulator.html">
+						<span>Menjumlahkan dua angka</span> 
+					</a>
+				</div>
+				<div class="item" style="background-color: #eeeeee;">
+					<a href="project2/map.html">
+						<span>Lokasi Istimewa dengan Leaflet</span> 
+					</a>
+				</div>
+				<div class="item" style="background-color: #eeeeee;">
+					<a href="project3/project.html">
+						<span> Leaflet fetch json</span>
+					</a>
+				</div>
+				<div class="item" style="background-color: #eeeeee;">
+					<span> Konten 4</span>
+				</div>
+				<div class="item" style="background-color: #eeeeee;">
+					<span> Konten 5</span>
+				</div>
+				<div class="item" style="background-color: #eeeeee;">
+					<span> Konten 6</span>
+				</div>
+				<div class="item" style="background-color: #eeeeee;">
+					<span> Konten 7</span>
+				</div>
+				<div class="item" style="background-color: #eeeeee;">
+					<span> Konten 8</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer">I Komang Pande Natayasa</div>
+	</div>
+	<script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service_worker.js')
+            .then(function() {
+                console.log('Service Worker are Registered');
+            })
+        }
+    </script>
+</body>
+</html>

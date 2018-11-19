@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+        #mymap { height: 100%; }
+
+        .popup{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .popup img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .popup .title{
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+        .popup .desc{
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mymap"></div>
+    <script>
+        var mymap = L.map('mymap').setView([-8.798032, 115.172434],16);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox.streets',
+            accessToken: 'pk.eyJ1IjoidHJpb3B1dHJhcCIsImEiOiJjam00ajRzbHMweXg2M2xxdDVwNHo4NmhiIn0.m9AganPvwoRN0HhmUJk0xg'
+            }).addTo(mymap);
+
+        var warungGue = L.marker([-8.800917, 115.170447]).addTo(mymap);
+        var warsing = L.marker([-8.802028, 115.172272]).addTo(mymap);
+        var unud = L.marker([-8.798032, 115.172434]).addTo(mymap);
+        var soba = L.marker([-8.800237, 115.170377]).addTo(mymap);
+        var nasiKuning = L.marker([-8.796593, 115.177378]).addTo(mymap);
+        
+        warungGue.bindPopup(popup('Warung Gue','Tempat Makan enak dan murah','https://truffle-assets.imgix.net/n0tuaih9ywav_2Vekit3Q884YCaYieskwuA_nasi-goreng-kampung_landscapeThumbnail_en-US.png'));
+        warsing.bindPopup(popup('Warung Singaraja','Tempat makan berbagai masakan khas singaraja yang sangat terjangkau anak kos','https://igx.4sqi.net/img/general/600x600/P45PRXHGMH0PYDCNFGC4D0VUBBJLHUNEISN0I2DIWWJLJT0J.jpg'));
+        unud.bindPopup(popup('Universitas Udayana','Gedung Rektorat Universitas Udayana','https://quipper-video-wordpress.s3.amazonaws.com/images/2017/02/1.1-Universitas-udayana.jpg'));
+        soba.bindPopup(popup('Warung Soto Babi', 'Tempat makan soto babi yang enak', 'https://lh3.googleusercontent.com/-TTTPypkb2Fo/Wb4KT5P1CVI/AAAAAAAABDI/plHQYwxEeJcl0C7T4CDdN9br8-cpmQ8MwCLIBGAYYCw/w1440-h1080-k-no/'));
+        nasiKuning.bindPopup(popup('Warung Nasi Kuning','Warung nasi kuning yang murah dan enak','http://laurentiadewi.com/uploads/P1240796.jpg'));
+        
+        function popup(title, desc, src){
+            return "<div class='popup'>"+
+                    "<img src='"+src+"'/>"+
+                    "<div class='title'>"+title+"</div>"+
+                    "<div class='desc'>"+desc+"</div>"+
+                "</div>";
+        }
+
+        var popup = L.popup();
+        function onMapClick(e) {
+            popup
+            .setLatLng(e.latlng)
+            .setContent("Lokasi yang dipilih: " + e.latlng.toString())
+            .openOn(mymap);
+        }
+        mymap.on('click', onMapClick);
+    </script>
+</body>
+</html>

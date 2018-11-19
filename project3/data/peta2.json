@@ -1,0 +1,36 @@
+{
+    "placesreview" : 
+    [
+        {
+             "lokasi": [-8.800917, 115.170447],
+             "sponsor" :"Warung Gue",
+             "gambar":"https://truffle-assets.imgix.net/n0tuaih9ywav_2Vekit3Q884YCaYieskwuA_nasi-goreng-kampung_landscapeThumbnail_en-US.png",
+             "review": "Tempat Makan enak dan murah"
+        },
+        {
+            "lokasi": [-8.802028, 115.172272],
+            "sponsor" :"Warung Singaraja",
+            "gambar":"https://igx.4sqi.net/img/general/600x600/P45PRXHGMH0PYDCNFGC4D0VUBBJLHUNEISN0I2DIWWJLJT0J.jpg",
+            "review": "Tempat makan berbagai masakan khas singaraja yang sangat terjangkau anak kos"
+        },
+        {
+            "lokasi": [-8.798032, 115.172434],
+            "sponsor" :"Universitas Udayana",
+            "gambar":"https://quipper-video-wordpress.s3.amazonaws.com/images/2017/02/1.1-Universitas-udayana.jpg",
+            "review": "Gedung Rektorat Universitas Udayana"
+        },
+        {
+            "lokasi": [-8.800237, 115.170377],
+            "sponsor" :"Warung Soto Babi",
+            "gambar":"https://lh3.googleusercontent.com/-TTTPypkb2Fo/Wb4KT5P1CVI/AAAAAAAABDI/plHQYwxEeJcl0C7T4CDdN9br8-cpmQ8MwCLIBGAYYCw/w1440-h1080-k-no/",
+            "review": "Tempat makan soto babi yang enak"
+        },
+        {
+            "lokasi": [-8.796593, 115.177378],
+            "sponsor" :"Warung Nasi Kuning",
+            "gambar":"/project3/images/1.jpg",
+            "review": "Warung nasi kuning yang murah dan enak"
+        } 
+    ]
+}
+    
